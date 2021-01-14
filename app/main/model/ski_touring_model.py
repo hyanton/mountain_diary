@@ -1,4 +1,4 @@
-from app import db
+from app.main import db
 from sqlalchemy.dialects.postgresql import JSON
 from marshmallow_sqlalchemy import ModelSchema
 
@@ -31,9 +31,3 @@ class SkiTouring(db.Model):
     def __repr__(self):
         message = 'Ski tour to {} made on {} (id: {})'.format(self.summit_name, self.date, self.id)
         return message
-
-
-class SkiTouringSchema(ModelSchema):
-    class Meta:
-        model = SkiTouring
-        sqla_session = db.session
