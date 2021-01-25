@@ -40,4 +40,4 @@ $ docker run -p 5019:5019 --name mountain-diary mountain-diary
 ### Extension:
 - Restful: [Flask-restplus](http://flask-restplus.readthedocs.io/en/stable/)
 
-- SQL ORM: [Flask-SQLalchemy](http://flask-sqlalchemy.pocoo.org/2.x/)
+- SQL ORM: [Flask-SQLalchemy](http://flask-sqlalchemy.pocoo.org/en/2.x/)
