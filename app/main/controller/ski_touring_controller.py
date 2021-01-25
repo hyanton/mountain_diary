@@ -1,11 +1,12 @@
 from flask import request
 from flask_restplus import Resource
 
-from ..util.dto import SkiTouringDto
+from app.main.dto.ski_touring_dto import SkiTouringDto
 from ..service.ski_touring_service import save_new_ski_tour, get_all_ski_tours, get_ski_tour
 
 api = SkiTouringDto.api
 _ski_tour = SkiTouringDto.ski_tour
+
 
 @api.route('/')
 class SkiTourList(Resource):
@@ -27,8 +28,8 @@ class SkiTourList(Resource):
         :return:
         """
         data = request.json
+        # print(data)
         return save_new_ski_tour(data=data)
-
 
 
 @api.route('/<id>')
@@ -43,7 +44,6 @@ class SkiTour(Resource):
         :param id: int
         :return:
         """
-
         ski_tour = get_ski_tour(id=id)
 
         if not ski_tour:
