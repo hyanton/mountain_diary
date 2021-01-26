@@ -15,6 +15,7 @@ class DevelopmentConfig(Config):
     DEVELOPMENT = True
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI')
+    LOGGING_FILENAME = os.environ.get('LOGGING_FILENAME')
 
 
 class TestingConfig(Config):
