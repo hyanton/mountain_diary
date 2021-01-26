@@ -19,8 +19,11 @@ migrate = Migrate(app, db, compare_type=True)
 manager = Manager(app)
 manager.add_command('db', MigrateCommand)
 
-# from app.main.model.ski_touring_model import SkiTouring
 
+# from app.main.model.ski_touring_model import SkiTouring
+# from app.main.model.user_model import User
+# from app.main.model.blacklist_token_model import BlackListToken
+# from app.main.model.random_model import Random
 
 @manager.command
 def run():

@@ -1,8 +1,11 @@
+from typing import Tuple, Dict
+
 from flask import request
 from flask_restplus import Resource
 
-from app.main.dto.ski_touring_dto import SkiTouringDto
+from ..dto.ski_touring_dto import SkiTouringDto
 from ..service.ski_touring_service import save_new_ski_tour, get_all_ski_tours, get_ski_tour
+from ..util.decorator import admin_token_required
 
 api = SkiTouringDto.api
 _ski_tour = SkiTouringDto.ski_tour
@@ -22,7 +25,8 @@ class SkiTourList(Resource):
     @api.response(201, 'Ski tour successfully added.')
     @api.doc('Add new ski tour')
     @api.expect(_ski_tour, validate=True)
-    def post(self):
+    @admin_token_required
+    def post(self) -> Tuple[Dict[str, str], int]:
         """
         Register new ski tour in database
         :return:

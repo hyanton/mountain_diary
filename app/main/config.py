@@ -1,6 +1,6 @@
 import os
 
-basedir = os.path.abspath(os.path.dirname(__file__))
+# basedir = os.path.abspath(os.path.dirname(__file__))
 
 
 class Config(object):
@@ -9,11 +9,6 @@ class Config(object):
     CSRF_ENABLED = True
     SECRET_KEY = os.environ.get('SECRET_KEY')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-
-
-class StagingConfig(Config):
-    DEVELOPMENT = True
-    DEBUG = True
 
 
 class DevelopmentConfig(Config):
